@@ -11,7 +11,7 @@ import json
 from torchvision import transforms
 from torch.utils.data import DataLoader
 from dataloader import MangaCharDataSet
-from model import weights_init, Generator, Discriminatore
+from model import weights_init, Generator, Discriminator
 
 # Set random seed for reproducibility.
 seed = 8008
