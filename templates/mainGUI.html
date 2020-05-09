@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<br lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manga Character Generator</title>
+</head>
+
+
+
+<div id="leftArea" align="left">
+	{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <span>{{ message }}</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+    <form action="{{ url_for('handle_data') }}" method="post">
+<!--    <input type="text" name="projectFilepath">-->
+<!--    <input type="submit">-->
+
+        <div id="descriptionArea" style="  color: black;
+  padding: 0px;
+  font-family: Arial;position: absolute;top: 25%;left:8%;">
+    <label style="font-size: 150%;">Description of Manga Character</label></div></br><br>
+    <textarea type ="text" name="mangaDes" rows="4" cols="50" style="position: absolute;top: 35%;left:6%">{{ text_area }}</textarea></br>
+    <div style="float:left,center;" >
+        <input type="submit" id="genButton" onclick="" style="position: absolute;top: 50%;left:24%;  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #008CBA;"/>
+    </div>
+</form>
+<!--    <div id="descriptionArea" style="  color: black;-->
+<!--  padding: 0px;-->
+<!--  font-family: Arial;position: absolute;top: 25%;left:7%;">-->
+<!--    <label style="font-size: 150%;">Description of Manga Character</label></div></br><br>-->
+<!--    <textarea id="mangaDes" rows="4" cols="50" style="position: absolute;top: 35%;left:5%">Akira is a girl with hair that is blue as the ocean, and eyes as red as the red sea-->
+<!--    </textarea></br>-->
+<!--    <div style="float:left,center;" >-->
+<!--    <button type="button" id="genButton" onclick="alert('Hello world!')" style="position: absolute;top: 50%;left:18%;">Click to Generate Image</button>-->
+
+</div>
+
+</div>
+
+</div>
+
+
+<div id="imageArea" style="float:right;top: 70%;" align="right">
+<!--    <img src="../../output/GeneratedPic1588411917419.png" alt="GenImage" width="64" height="48">-->
+<!--    <img class="GenImage" src="{{ image_file }}" width="64" height="48"></div></br>-->
+    <img class="GenImage" src="{{ image_file }}" width="320" height="240"></div></br>
+</div>
+
+
+
+
+
+
+</body>
+</html>
